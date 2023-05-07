@@ -3,12 +3,11 @@
 #include<cctype>
 using namespace std;
 
-  
-void passengers();
+  int book,count=0;
+  void checkalpha( char name[25]);
+  void passengers();
 int main()
 {
-  
-
    passengers();
 
   return 0;
@@ -16,58 +15,19 @@ int main()
 
   void passengers()
   {
+      
     char firstname[25],lastname[25],departure[25],arrival[25],email[25];
     cout<<" please,enter your first name"<<endl;
     // the loop used to check if the input includes other charcter without leters
-  int book,count=0;
+  
   cin>> firstname;
-  book = strlen(firstname);
-  for(int i =0; i<book;i++)
-  {
-    bool are = isalpha(firstname[i]);
-    if(!are)
-    count++;
-  }
-  while(count>0)
-  {
-    cout<<"enter your name again"<<endl;
-    count=0;
-    cin>>firstname;
-    book =strlen(firstname);
-    for(int i=0;i<book;i++)
-    {
-      bool are =isalpha(firstname[i]);
-      if(!are)
-      count++;
-    }
-
-  }
+  checkalpha(firstname);
+ 
     cout<<"enter your last name "<<endl;
      // the loop used to check if the input includes other charcter without leters   
   count=0;
   cin>> lastname;
-  book = strlen(lastname);
-  for(int i =0; i<book;i++)
-  {
-    bool are = isalpha(lastname[i]);
-    if(!are)
-    count++;
-  }
-  while(count>0)
-  {
-    cout<<"enter your name again"<<endl;
-    count=0;
-    cin>>lastname;
-    book =strlen(lastname);
-    for(int i=0;i<book;i++)
-    {
-      bool are =isalpha(lastname[i]);
-      if(!are)
-      count++;
-    }
-
-  } 
-   
+  checkalpha(lastname);
    
     int age;
     char phonenumber[20];
@@ -93,6 +53,30 @@ int main()
     cin>>arrival;
     cout<<"enter your email address"<<endl;
     cin>>email;
+  }
+ 
+  void checkalpha(char name[25]){
+     
+       book = strlen(name);
+  for(int i =0; i<book;i++)
+  {
+    bool are = isalpha(name[i]);
+    if(!are)
+    count++;
+  }
+  while(count>0)
+  {
+    cout<<"enter your name again"<<endl;
+    count=0;
+    cin>>name;
+    book =strlen(name);
+    for(int i=0;i<book;i++)
+    {
+      bool are =isalpha(name[i]);
+      if(!are)
+      count++;
+    }
 
-
+  }
+  
   }
