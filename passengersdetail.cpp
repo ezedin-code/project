@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include<cctype>
-using namespace std;
+using namespace std;//including files
 
   int book,count=0;
   void checkalpha( char name[25]);
